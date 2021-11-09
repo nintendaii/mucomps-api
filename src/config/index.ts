@@ -11,8 +11,6 @@ export const mongo = {
   uri: process.env.MONGO_URI || "mongodb://localhost:27017/gbn",
   options: {
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
   },
 };

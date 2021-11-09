@@ -1,10 +1,8 @@
-import Fastify, {
-  fastify,
-  FastifyInstance,
-  RouteShorthandOptions,
-} from "fastify";
+import Fastify, { FastifyInstance } from "fastify";
 import swagger from "./swagger";
+import mongoose from "mongoose";
 import { port, mongo } from "./config/index";
+import { ConnectionOptions } from "tls";
 
 const prettyLogOptions = {
   prettyPrint: {
@@ -23,7 +21,8 @@ server.register(swagger);
 const start = async () => {
   try {
     await server.listen(port);
-    console.log("Works");
+    await mongoose.connect(mongo.uri, mongo.options as ConnectionOptions);
+    server.log.info("Works");
   } catch (err) {
     server.log.error(err);
     process.exit(1);
