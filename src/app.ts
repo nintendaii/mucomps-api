@@ -1,6 +1,7 @@
 import Fastify, { FastifyInstance } from "fastify";
 import swagger from "./swagger";
 import mongoose from "mongoose";
+import user from "./entities/user";
 import { port, mongo } from "./config/index";
 import { ConnectionOptions } from "tls";
 
@@ -17,6 +18,7 @@ const server: FastifyInstance = Fastify({
 });
 
 server.register(swagger);
+server.register(user, { prefix: "/user" });
 
 const start = async () => {
   try {
