@@ -1,0 +1,30 @@
+#General
+.DS_Store
+coverage
+node_modules
+build
+public
+.tmp
+.idea
+.log
+dist
+docs
+.env
+npm-debug.log
+.nyc_output
+coverage
+cassettes
+package-lock.json
+.vscode
+.elasticbeanstalk/
+.ebextensions
+.clinic/
+app.yaml
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# TypeScript cache
+*.tsbuildinfo
