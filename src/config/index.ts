@@ -14,3 +14,5 @@ export const mongo = {
     useUnifiedTopology: true,
   },
 };
+
+export const salt = Number(process.env.SALT) || 12;
